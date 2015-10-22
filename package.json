@@ -25,10 +25,12 @@
     "gulp-json-editor": "^2.2.1",
     "gulp-open": "^0.3.0",
     "gulp-rename": "^1.2.0",
+    "gulp-shell": "^0.5.0",
     "http-proxy": "~1.1.4",
     "is-running": "~1.0.5",
     "node-resemble-js": "0.0.4",
     "require-dir": "^0.1.0",
+    "simplecrawler": "^0.5.4",
     "underscore": "~1.6.0",
     "yargs": "~3.9.0"
   }
