@@ -13,7 +13,6 @@ if (!config.paths) {
 
 var bitmaps_reference = config.paths.bitmaps_reference || 'bitmaps_reference';
 var bitmaps_test = config.paths.bitmaps_test || 'bitmaps_test';
-var bitmaps_static = config.paths.bitmaps_static || 'bitmaps_static';
 var casper_scripts = config.paths.casper_scripts || null;
 var compareConfigFileName = config.paths.compare_data || 'compare/config.json';
 var viewports = config.viewports;

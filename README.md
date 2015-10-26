@@ -390,7 +390,7 @@ Description: Move the Casper instance to whatever url you specify.
 
 Description: Have Casper wait an arbitrary time, stated in milliseconds. Wait can accept either an int argument or a string that can convert into an int.
 
-##### Limitations of Actions API / CasperJS
+#### Limitations of Actions API / CasperJS
 
 Casper.js runs a stripped down version of webkit, which isn't quite the same as either Chrome or Safari. You may encounter Casper.js specific bugs and the page may be different when loaded on Casper.js vs Chrome. 
     
