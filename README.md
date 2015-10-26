@@ -298,6 +298,101 @@ There may also be elements which need to be completely removed during testing. F
     "removeSelectors": [
     	"#someUnpredictableSizedDomSelector"
     ]
+
+### The Actions API
+
+You can pass actions to the Casper instance using the 'actions' field in backstop.json. The actions api follows the same format (almost) every time:
+
+    {
+      "actionName": "target"
+    }
+
+The action name is the function you are calling in the api, which is a string literal. The target is its argument, typically a css selector. 
+
+#### Actions API methods
+
+######clickNext
+
+    {
+      "clickNext": "#anyCssSelector"
+    }
+
+Description: click on an element that will result in a url change.
+
+######click
+
+    {
+      "click": ".anyCssSelector"
+    }
+
+Description: click on an element on a page.
+
+######form
+
+  {
+    "form": "#formSelector",
+    "#inputSelector": "valueForTheInputSelector",
+    "#secondInputSelector": "valueForThisInputSelector"
+  }
+
+Description: The form method fills out and submits web forms. The form method requires the most detail in the actions api. 
+
+It takes the string literal "form", followed by the selector for the form. 
+
+Afterwards, it takes the CSS selectors for the input fields, followed by the value you want to place in them. The form method automatically submits the form. 
+
+######select
+
+    {
+      "select": "#selectSelector",
+      "#selectSelector": "valueToSetItTo"
+    }
+
+Description: the form function has trouble with select boxes. Therefore, you can use the select method to set the value of select boxes. Note the select method requires a little repetition, pass the CSS selector for the select box as the first argument and then repeat it on the next line.
+
+######captureSelector
+
+    {
+      "captureSelector": "#selectorForCapturedElement"
+    }
+
+Description: this function will capture the first instance of whatever css selector you give it. 
+
+######waitToCapture
+
+    {
+      "waitToCapture": "#selectorToWaitForThenCapture"
+    }
+
+Description: waitToCapture will wait until the specifed selector is on the page and then take a screenshot. Useful for any element that appears only after an action, eg, a modal. 
+
+######evaluate
+
+    {
+      "evaluate": "func() {console.log('Enclosed in a string')}"
+    }
+
+Description: evaluate any arbitray function on the current page. There are no functions in a .json file, so the function must be a string, wrapped in quotations. 
+
+######navigate
+
+    {
+      "navigate": "http://www.urltonavigateto.com"
+    }
+
+Description: Move the Casper instance to whatever url you specify. 
+
+######wait 
+
+    {
+      "wait": 6000
+    }
+
+Description: Have Casper wait an arbitrary time, stated in milliseconds. Wait can accept either an int argument or a string that can convert into an int.
+
+##### Limitations of Actions API / CasperJS
+
+Casper.js runs a stripped down version of webkit, which isn't quite the same as either Chrome or Safari. You may encounter Casper.js specific bugs and the page may be different when loaded on Casper.js vs Chrome. 
     
 ### Running custom CasperJS scripts (version 0.8.0+)
 

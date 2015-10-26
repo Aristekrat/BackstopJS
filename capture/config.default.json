@@ -1,16 +1,16 @@
 {
     "viewports": [{
-        "name": "phone",
-        "width": 320,
-        "height": 480
-    }, {
-        "name": "tablet_v",
-        "width": 568,
-        "height": 1024
+        "name": "dekstop_med",
+        "width": 1366,
+        "height": 768
     }, {
         "name": "tablet_h",
         "width": 1024,
         "height": 768
+    }, {
+        "name": "phone",
+        "width": 320,
+        "height": 568
     }],
     "scenarios": [{
         "label": "http://getbootstrap.com",
@@ -31,11 +31,36 @@
         "delay": 500,
         "misMatchThreshold": 0.1,
         "onReadyScript": "onReady.js"
+    }, {
+        "label": "amazon.com/Step-Bootstrap-Quick-Responsive-Development",
+        "url": "http://www.amazon.com/Step-Bootstrap-Quick-Responsive-Development/dp/1499655622",
+        "hideSelectors": [],
+        "removeSelectors": [],
+        "selectors": [
+            "#leftCol",
+            "#centerCol"
+        ],
+        "actions": [{
+            "clickNext": "#add-to-cart-button"
+        }, {
+            "captureSelector": "#huc-page-container"
+        }, {
+            "clickNext": "#hlb-ptc-btn-native"
+        }, {
+            "form": "form",
+            "#ap_email": "reallyarealemail@real.com",
+            "#ap_password": "RealPassword"
+        }, {
+            "waitToCapture": ".address-book"
+        }],
+        "readyEvent": null,
+        "delay": 500,
+        "misMatchThreshold": 0.1,
+        "onReadyScript": "onReady.js"
     }],
     "paths": {
         "bitmaps_reference": "../../backstop_data/bitmaps_reference",
         "bitmaps_test": "../../backstop_data/bitmaps_test",
-        "bitmaps_static": "../../backstop_data/bitmaps_static",
         "compare_data": "../../backstop_data/bitmaps_test/compare.json",
         "casper_scripts": "../../backstop_data/casper_scripts"
     },
