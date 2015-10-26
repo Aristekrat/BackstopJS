@@ -311,7 +311,7 @@ The action name is the function you are calling in the api, which is a string li
 
 #### Actions API methods
 
-######clickNext
+#####clickNext
 
     {
       "clickNext": "#anyCssSelector"
@@ -319,7 +319,7 @@ The action name is the function you are calling in the api, which is a string li
 
 Description: click on an element that will result in a url change.
 
-######click
+#####click
 
     {
       "click": ".anyCssSelector"
@@ -327,7 +327,7 @@ Description: click on an element that will result in a url change.
 
 Description: click on an element on a page.
 
-######form
+#####form
 
   {
     "form": "#formSelector",
@@ -341,7 +341,7 @@ It takes the string literal "form", followed by the selector for the form.
 
 Afterwards, it takes the CSS selectors for the input fields, followed by the value you want to place in them. The form method automatically submits the form. 
 
-######select
+#####select
 
     {
       "select": "#selectSelector",
@@ -350,7 +350,7 @@ Afterwards, it takes the CSS selectors for the input fields, followed by the val
 
 Description: the form function has trouble with select boxes. Therefore, you can use the select method to set the value of select boxes. Note the select method requires a little repetition, pass the CSS selector for the select box as the first argument and then repeat it on the next line.
 
-######captureSelector
+#####captureSelector
 
     {
       "captureSelector": "#selectorForCapturedElement"
@@ -358,7 +358,7 @@ Description: the form function has trouble with select boxes. Therefore, you can
 
 Description: this function will capture the first instance of whatever css selector you give it. 
 
-######waitToCapture
+#####waitToCapture
 
     {
       "waitToCapture": "#selectorToWaitForThenCapture"
@@ -366,7 +366,7 @@ Description: this function will capture the first instance of whatever css selec
 
 Description: waitToCapture will wait until the specifed selector is on the page and then take a screenshot. Useful for any element that appears only after an action, eg, a modal. 
 
-######evaluate
+#####evaluate
 
     {
       "evaluate": "func() {console.log('Enclosed in a string')}"
@@ -374,7 +374,7 @@ Description: waitToCapture will wait until the specifed selector is on the page 
 
 Description: evaluate any arbitray function on the current page. There are no functions in a .json file, so the function must be a string, wrapped in quotations. 
 
-######navigate
+#####navigate
 
     {
       "navigate": "http://www.urltonavigateto.com"
@@ -382,7 +382,7 @@ Description: evaluate any arbitray function on the current page. There are no fu
 
 Description: Move the Casper instance to whatever url you specify. 
 
-######wait 
+#####wait 
 
     {
       "wait": 6000

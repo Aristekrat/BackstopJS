@@ -37,13 +37,16 @@
         "hideSelectors": [],
         "removeSelectors": [],
         "selectors": [
-            "#leftCol",
-            "#centerCol"
+            "#leftCol"
         ],
         "actions": [{
             "clickNext": "#add-to-cart-button"
         }, {
-            "captureSelector": "#huc-page-container"
+            "captureSelector": "#huc-v2-order-row-with-divider"
+        }, {
+            "captureSelector": "#cbcc_banner_container"
+        }, {
+            "captureSelector": "#huc-first-upsell-row"
         }, {
             "clickNext": "#hlb-ptc-btn-native"
         }, {
